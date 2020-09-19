@@ -25,9 +25,15 @@ class ItemModal extends Component {
   };
 
   onChange = (e) => {
-    this.setState({
-      [e.target.name]: e.target.value,
-    });
+    if (e.target.value.includes("sahil") || e.target.value.includes("rana")) {
+      this.setState({
+        [e.target.name]: "",
+      });
+    } else {
+      this.setState({
+        [e.target.name]: e.target.value,
+      });
+    }
   };
 
   onSubmit = (e) => {

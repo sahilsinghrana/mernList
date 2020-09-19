@@ -21,21 +21,56 @@ class ShoppingList extends Component {
       <Container>
         <ListGroup>
           <TransitionGroup className="shopping-list">
-            {items.map(({ _id, name }) => (
-              <CSSTransition key={_id} timeout={500} classNames="fade">
-                <ListGroupItem>
-                  <Button
-                    className="remove-btn"
-                    color="danger"
-                    size="sm"
-                    onClick={this.onDeleteClick.bind(this, _id)}
-                  >
-                    &times;
-                  </Button>
-                  {name}
-                </ListGroupItem>
-              </CSSTransition>
-            ))}
+            {items.map(({ _id, name }) => {
+              if (
+                name.includes("Faizal") ||
+                name.includes("Sarath") ||
+                name.includes("Nilesh") ||
+                name.includes("Ankush") ||
+                name.includes("Button") ||
+                name.includes("Vatsal") ||
+                name.includes("Yuvraj") ||
+                name.includes("faizal") ||
+                name.includes("sarath") ||
+                name.includes("nilesh") ||
+                name.includes("ankush") ||
+                name.includes("button") ||
+                name.includes("vatsal") ||
+                name.includes("yuvraj")
+              ) {
+                return (
+                  <CSSTransition key={_id} timeout={500} classNames="fade">
+                    <ListGroupItem>
+                      <Button
+                        className="remove-btn"
+                        color="dark"
+                        size="sm"
+                        // onClick={this.onDeleteClick.bind(this, _id)}
+                      >
+                        &times;
+                      </Button>
+                      {name}
+                    </ListGroupItem>
+                  </CSSTransition>
+                );
+              }
+
+              return (
+                <CSSTransition key={_id} timeout={500} classNames="fade">
+                  <ListGroupItem>
+                    <Button
+                      className="remove-btn"
+                      color="danger"
+                      size="sm"
+                      onClick={this.onDeleteClick.bind(this, _id)}
+                    >
+                      &times;
+                    </Button>
+                    {name}
+                  </ListGroupItem>
+                </CSSTransition>
+              );
+            })}
           </TransitionGroup>
         </ListGroup>
       </Container>
