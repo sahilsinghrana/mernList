@@ -30,7 +30,7 @@ class ItemModal extends Component {
       e.target.value.toLowerCase().includes("rana")
     ) {
       this.setState({
-        [e.target.name]: "",
+        [e.target.name]: "undefined",
       });
     } else {
       this.setState({
@@ -70,7 +70,7 @@ class ItemModal extends Component {
               <FormGroup>
                 <Label for="item">Item</Label>
                 <Input
-                  autofocus
+                  autoFocus
                   autoComplete="off"
                   type="text"
                   name="name"
