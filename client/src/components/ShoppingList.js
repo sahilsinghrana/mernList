@@ -23,20 +23,13 @@ class ShoppingList extends Component {
           <TransitionGroup className="shopping-list">
             {items.map(({ _id, name }) => {
               if (
-                name.includes("Faizal") ||
-                name.includes("Sarath") ||
-                name.includes("Nilesh") ||
-                name.includes("Ankush") ||
-                name.includes("Button") ||
-                name.includes("Vatsal") ||
-                name.includes("Yuvraj") ||
-                name.includes("faizal") ||
-                name.includes("sarath") ||
-                name.includes("nilesh") ||
-                name.includes("ankush") ||
-                name.includes("button") ||
-                name.includes("vatsal") ||
-                name.includes("yuvraj")
+                name.toLowerCase().includes("faizal") ||
+                name.toLowerCase().includes("sarath") ||
+                name.toLowerCase().includes("nilesh") ||
+                name.toLowerCase().includes("ankush") ||
+                name.toLowerCase().includes("button") ||
+                name.toLowerCase().includes("vatsal") ||
+                name.toLowerCase().includes("yuvraj")
               ) {
                 return (
                   <CSSTransition key={_id} timeout={500} classNames="fade">

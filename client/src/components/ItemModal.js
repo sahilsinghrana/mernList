@@ -25,7 +25,10 @@ class ItemModal extends Component {
   };
 
   onChange = (e) => {
-    if (e.target.value.includes("sahil") || e.target.value.includes("rana")) {
+    if (
+      e.target.value.toLowerCase().includes("sahil") ||
+      e.target.value.toLowerCase().includes("rana")
+    ) {
       this.setState({
         [e.target.name]: "",
       });
